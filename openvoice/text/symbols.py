@@ -69,8 +69,16 @@ _punctuation = ',.!?~…─'
 _letters = '#Nabdefghijklmnoprstuvwxyzæçøŋœȵɐɑɒɓɔɕɗɘəɚɛɜɣɤɦɪɭɯɵɷɸɻɾɿʂʅʊʋʌʏʑʔʦʮʰʷˀː˥˦˧˨˩̥̩̃̚ᴀᴇ↑↓∅ⱼ '
 '''
 
+'''# arabic
+_arabic_letters = " ا ب ت ث ح خ ج ه ع غ ف ق ث ص ض ش س ل ن م ك ط ئ ء ؤ ر لا ى ة و ز ظ ءآأؤإئىابةتثجحخدذرزسشصضطظعغفقكلمنهوي"
+
+_letters += _arabic_letters
+'''
+
+
 # Export all symbols:
-symbols = [_pad] + list(_punctuation) + list(_letters)
+symbols = [_pad] + list(_punctuation) + list(_special) + list(_letters)
+
 
 # Special symbol ids
 SPACE_ID = symbols.index(" ")
@@ -79,10 +87,13 @@ num_ja_tones = 1
 num_kr_tones = 1
 num_zh_tones = 6
 num_en_tones = 4
+num_ar_tones = 1
 
 language_tone_start_map = {
     "ZH": 0,
     "JP": num_zh_tones,
     "EN": num_zh_tones + num_ja_tones,
     'KR': num_zh_tones + num_ja_tones + num_en_tones,
+    "AR": num_zh_tones + num_ja_tones + num_en_tones + num_kr_tones,
+
 }
