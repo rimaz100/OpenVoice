@@ -10,9 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Push to HF Space
-        uses: huggingface/hub-action@v2
+      - name: Sync to HF Space
+        uses: huggingface/huggingface-action@v1
         with:
-          repo-token: ${{ secrets.HF_TOKEN }}
-          repo-type: space
-          repo-id: rtjkgr/openvoice1    # غيّر هذا إذا اسم الـ Space مختلف
+          repo_type: space
+          space: rtjkgr/openvoice1   # غيّر لاسم حسابك/الـ Space
+          token: ${{ secrets.HF_TOKEN }}
