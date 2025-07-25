@@ -1,0 +1,18 @@
+name: Sync to Hugging Face Space
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Push to HF Space
+        uses: huggingface/hub-action@v1
+        with:
+          repo-token: ${{ secrets.HF_TOKEN }}
+          repo-type: space
+          repo-id: rtjkgr/openvoice1    # غيّر هذا إذا اسم الـ Space مختلف
